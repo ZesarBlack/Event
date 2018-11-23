@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>eventos registrados</ion-title>
+  </ion-navbar>
+</ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button ion-item *ngFor="let nota of notas | async" (click)="ir_detalle(nota.id)">
+        <h2>{{nota.longitude}}</h2>
+        <h2>{{nota.latitude}}</h2>
+        <h2>{{nota.titulo}}</h2>
+      </button>
+    </ion-list>
+  </ion-content>

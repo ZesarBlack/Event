@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Registrar evento</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addMarker()">
+        <ion-icon name="md-locate"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content  padding>
+    <ion-label>Tipo de evento</ion-label>
+    <ion-item>
+        <ion-label>Eventos</ion-label>
+        <ion-select [(ngModel)]="location.titulo">
+          <ion-option value="Arte">Arte</ion-option>
+          <ion-option value="Gastronomia">Gastronomia</ion-option>
+          <ion-option value="Deporte">Deporte</ion-option>
+          <ion-option value="Danza">Danza</ion-option>
+          <ion-option value="Tecnología">Tecnología</ion-option>
+          <ion-option value="Juegos">Juegos</ion-option>
+        </ion-select>
+    </ion-item>
+          <ion-label>Descripción</ion-label>
+    <ion-item>
+      <textarea [(ngModel)]="location.descripcion" rows="8" cols="30"></textarea>
+   </ion-item>
+         <ion-label>Fecha del evento</ion-label>
+   <ion-item>
+     <ion-input type="Date" [(ngModel)]="location.fecha"></ion-input>
+  </ion-item>
+
+
+<!--<button ion-button block (click)="onAddPlace()" type="submit">Agregar lugar</button>-->
+
+  <ion-grid>
+    <ion-row>
+      <ion-col><button ion-button color="secondary" block (click)="onLocateUser()" (click)="avisoOk()">Localizarme</button></ion-col>
+    </ion-row>
+  </ion-grid>
+  <div id="map" style="width:100%; height:100%;"></div>
+
+
+
+</ion-content>
